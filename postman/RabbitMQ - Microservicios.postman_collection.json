@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "35f903cb-8e84-40b5-8d93-f5d3ed246712",
+		"name": "RabbitMQ - Microservicios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25105093",
+		"_collection_link": "https://dark-escape-736511.postman.co/workspace/rabbitmq-spring~60fc102d-fb8d-4c5d-bbd7-68c9fa6de281/collection/25105093-35f903cb-8e84-40b5-8d93-f5d3ed246712?action=share&source=collection_link&creator=25105093"
+	},
+	"item": [
+		{
+			"name": "Productos",
+			"item": [
+				{
+					"name": "Crear Producto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"Producto 1\",\n    \"descripcion\": \"descripcion del producto 1\",\n    \"precio\": 100000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productos-ms}}/api/v1/productos",
+							"host": [
+								"{{productos-ms}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Compra",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"productoId\" : 1,\n    \"cantidad\" : 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{productos-ms}}/api/v1/productos",
+							"host": [
+								"{{productos-ms}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Crear Cliente",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nombre\": \"cliente 1\",\n    \"correo\": \"cliente1@gmail.com\",\n    \"direccion\": \"direccion del cliente 1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ventas-ms}}/api/v1/clientes",
+							"host": [
+								"{{ventas-ms}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ventas",
+			"item": [
+				{
+					"name": "Crear Venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"clienteId\" : 1,\n    \"productoId\": 1,\n    \"cantidad\" : 5,\n    \"precioTotal\": 50000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{ventas-ms}}/api/v1/ventas",
+							"host": [
+								"{{ventas-ms}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"ventas"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
