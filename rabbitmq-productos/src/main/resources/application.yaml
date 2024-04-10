@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  datasource:
+    url: jdbc:postgresql://localhost:5432/spring_rabbitmq
+    username: postgres
+    password: postgres
+    driver-class-name: org.postgresql.Driver
+
+rabbit-spring:
+  queues:
+    - productos:
+      exchange: productos
+      routing-key: productos
